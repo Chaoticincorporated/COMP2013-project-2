@@ -7,7 +7,7 @@ import ProductForm from "./productForm";
 
 export default function GroceriesAppContainer() {
   //States
-  const [productData, setProductData] = useState([]);
+  const [productData, setProductData] = useState([]);//holds the product data taken from the database
   const [productForm, setProductForm] = useState({
     id: "",
     productName: "",
@@ -15,11 +15,11 @@ export default function GroceriesAppContainer() {
     image: "",
     price: "",
     _id:"",
-  });
-  const [formResponse, setFormResponse] = useState();
-  const [productQuantity, setProductQuantity] = useState([]);
-  const [cartList, setCartList] = useState([]);
-  const [isEditing, setIsEditing] = useState(false);
+  });//holds the data for the product form
+  const [formResponse, setFormResponse] = useState();//holds the response message from the form submission
+  const [productQuantity, setProductQuantity] = useState([]);// holds quantity selected for each product
+  const [cartList, setCartList] = useState([]);//holds all items the user puts in their cart
+  const [isEditing, setIsEditing] = useState(false);//used to toggle between edit and submit mode
   //useEffects
   useEffect(()=>{
     handleProductsDB();
